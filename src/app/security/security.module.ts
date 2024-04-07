@@ -5,6 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { SecurityRoutingModule } from './security-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -12,7 +14,9 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
   declarations: [
     SecurityComponent,
     LoginComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

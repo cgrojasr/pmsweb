@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./maintenance.component.css']
 })
 export class MaintenanceComponent {
-
+  titulo:string = 'Titulo de la pagina'
 }

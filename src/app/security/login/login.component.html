@@ -1,1 +1,42 @@
-<p>login works!</p>
+<form #form="ngForm">
+    <div class="position-absolute top-50 start-50 translate-middle" style="width: 400px;">
+        <div class="row justify-content-center">
+            <app-header></app-header>
+        </div>
+        <div class="row" style="background-color: white; padding-top: 20px; padding-bottom: 20px;">
+            <div class="row justify-content-center">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">✉</span>
+                    <input type="email" class="form-control" placeholder="correo electrónico" aria-label="Username" aria-describedby="basic-addon1" name="email" [(ngModel)]="usuarioLogin.usuario">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">🔑</span>
+                    <input type="password" class="form-control" placeholder="contraseña" aria-label="Username" aria-describedby="basic-addon1" name="password" [(ngModel)]="usuarioLogin.password">
+                </div>
+            </div>
+            <!-- <div class="row justify-content-center">
+                <div class="col-10 form-check">
+                    <input class="form-check-input" type="checkbox" [(ngModel)]="sesion" id="sesion" name="sesion">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Recordar usuario en este dispositivo
+                    </label>
+                </div>
+            </div> -->
+            <br>
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <button class="btn btn-primary" (click)="btnLogin_Click()">Login</button>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-secondary" (click)="btnResetPassword_Click()">Recuperar</button>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div class="row justify-content-center">
+            <app-footer></app-footer>
+        </div>
+    </div>
+</form>
