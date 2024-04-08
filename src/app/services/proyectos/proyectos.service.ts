@@ -12,15 +12,15 @@ export class ProyectosService {
   proyectos: ProyectosItem[] = [
     {
       id_proyecto: 1,
-      nombre: '',
-      estado: '',
-      pm_asignado: ''
+      nombre: 'App Movil Banco Nacional',
+      estado: 'Planificación',
+      pm_asignado: 'Cristiano Ronaldo'
     },
     {
       id_proyecto: 2,
-      nombre: '',
-      estado: '',
-      pm_asignado: ''
+      nombre: 'Backup de servidores',
+      estado: 'Ejecución',
+      pm_asignado: 'Chiquito Romero'
     }
   ]
 
