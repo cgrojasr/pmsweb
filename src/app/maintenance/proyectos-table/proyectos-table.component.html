@@ -15,8 +15,9 @@
             <td>{{item.pm_asignado}}</td>
             <td>{{item.estado}}</td>
             <td>
-                <button class="btn btn-secondary">Editar</button>
+                <button class="btn btn-secondary" (click)="btnEditar_Click(item.id_proyecto)" >Editar</button>
             </td>
         </tr>
     </tbody>
 </table>
+{{saldo}}

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProyectosItem } from 'src/app/models/proyectos-model';
 import { ProyectosService } from 'src/app/services/proyectos/proyectos.service';
 
@@ -11,13 +12,20 @@ export class ProyectosTableComponent implements OnInit {
   proyectos: ProyectosItem[] = []
 
   constructor(
-    private proyectosService: ProyectosService
+    private proyectosService: ProyectosService,
+    private router: Router
   ) {
   }
+
+  @Input() saldo: number = 0
 
   ngOnInit(): void {
     this.proyectosService.listar().subscribe(result => {
       this.proyectos = result
     })
+  }
+
+  btnEditar_Click(id_proyecto:number){
+    this.router.navigateByUrl('maintenance/proyecto-item/'+id_proyecto)
   }
 }

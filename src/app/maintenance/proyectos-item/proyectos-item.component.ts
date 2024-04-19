@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { GestorItem } from 'src/app/models/gestor-model';
 import { Proyecto } from 'src/app/models/proyectos-model';
 import { GestorService } from 'src/app/services/gestor/gestor.service';
@@ -12,15 +13,9 @@ import { ProyectosService } from 'src/app/services/proyectos/proyectos.service';
 })
 export class ProyectosItemComponent implements OnInit {
 
-  proyecto: Proyecto = {
-    id_proyecto: 0,
-    nombre: '',
-    id_pm_asignado: 0,
-    fecha_inicio: new Date(),
-    id_estado: 0
-  }
+  id_proyecto: number = 0
 
-  proyecto_result: Proyecto = {
+  proyecto: Proyecto = {
     id_proyecto: 0,
     nombre: '',
     id_pm_asignado: 0,
@@ -35,24 +30,31 @@ export class ProyectosItemComponent implements OnInit {
   constructor(
     private gestorService: GestorService,
     private proyectoService: ProyectosService,
-    private router: Router
-  ) {
-    
-  }
+    private router: Router,
+    private activedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
+    this.activedRoute.params.subscribe(
+      params => {
+        if(params["id_proyecto"] !== undefined){
+          this.id_proyecto = params["id_proyecto"]
+          //cargar los datos de la base de datos con el id
+        }
+      }
+    )
     this.gestorService.listartodo().subscribe(
       result => {
         this.gestores = result
       }
     )
+    
   }
 
   btnRegistra_Click():void{
     this.proyectoService.registrar(this.proyecto).subscribe(
       result => {
-        this.proyecto_result = result
-        console.log(this.proyecto_result)
+        console.log(result)
         this.router.navigateByUrl('maintenance/proyectos')
       }
     )

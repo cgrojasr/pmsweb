@@ -21,6 +21,12 @@ export class ProyectosService {
       nombre: 'Backup de servidores',
       estado: 'Ejecución',
       pm_asignado: 'Chiquito Romero'
+    },
+    {
+      id_proyecto: 3,
+      nombre: 'App de Beneficios',
+      estado: 'Maduración',
+      pm_asignado: 'Reymond Manco'
     }
   ]
 

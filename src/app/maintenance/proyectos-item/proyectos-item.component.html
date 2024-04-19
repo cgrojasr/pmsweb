@@ -1,4 +1,8 @@
 <form #form="ngForm">
+    <div>
+        <h1 *ngIf="id_proyecto===0" class="mb-3">Registrar proyecto</h1>
+        <h1 *ngIf="id_proyecto!==0" class="mb-3">Modificar proyecto</h1>
+    </div>
     <div class="row">
         <div class="col-md-4">
             <div class="form-floating mb-3">
@@ -14,10 +18,6 @@
                     <option *ngFor="let gestor of gestores" [ngValue]="gestor.id_gestor">
                         {{gestor.nombre}}
                     </option>
-                  <!-- <option selected>Open this select menu</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option> -->
                 </select>
                 <label for="floatingSelect">Project Manager</label>
               </div>
@@ -51,5 +51,4 @@
             <button class="btn btn-primary" (click)="btnRegistra_Click()">Registrar</button>
         </div>
     </div>
-    Nombre proyecto: {{proyecto.nombre}}
 </form>

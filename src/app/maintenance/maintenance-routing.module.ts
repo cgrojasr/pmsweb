@@ -25,6 +25,10 @@ const routes: Routes = [
         component: ProyectosItemComponent
       },
       {
+        path: 'proyecto-item/:id_proyecto',
+        component: ProyectosItemComponent
+      },
+      {
         path: 'releases',
         component: ReleasesComponent
       }
