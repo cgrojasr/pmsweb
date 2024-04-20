@@ -11,6 +11,7 @@ import { ReleasesItemComponent } from './releases-item/releases-item.component';
 import { MaintenanceRoutingModule } from './maintenance-routing.module';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { ProyectoEliminarComponent } from './proyecto-eliminar/proyecto-eliminar.component';
 
 
 
@@ -23,7 +24,8 @@ import { SharedModule } from '../shared/shared.module';
     ProyectosTableComponent,
     ProyectosItemComponent,
     ReleasesTableComponent,
-    ReleasesItemComponent
+    ReleasesItemComponent,
+    ProyectoEliminarComponent
   ],
   imports: [
     CommonModule,

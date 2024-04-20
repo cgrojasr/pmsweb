@@ -10,6 +10,7 @@ import { ProyectosService } from 'src/app/services/proyectos/proyectos.service';
 })
 export class ProyectosTableComponent implements OnInit {
   proyectos: ProyectosItem[] = []
+  id_proyecto_selected: number = 0
 
   constructor(
     private proyectosService: ProyectosService,
@@ -25,7 +26,12 @@ export class ProyectosTableComponent implements OnInit {
     })
   }
 
+
   btnEditar_Click(id_proyecto:number){
     this.router.navigateByUrl('maintenance/proyecto-item/'+id_proyecto)
+  }
+
+  btnEliminar_Click(id_proyecto: number): void {
+    this.id_proyecto_selected = id_proyecto
   }
 }
