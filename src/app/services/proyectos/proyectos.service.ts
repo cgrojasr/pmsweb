@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Proyecto, ProyectosItem } from 'src/app/models/proyectos-model';
@@ -7,7 +8,9 @@ import { Proyecto, ProyectosItem } from 'src/app/models/proyectos-model';
 })
 export class ProyectosService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   proyectos: ProyectosItem[] = [
     {
@@ -31,10 +34,25 @@ export class ProyectosService {
   ]
 
   listar():Observable<ProyectosItem[]>{
-    return of(this.proyectos)
+    //return of(this.proyectos)
+    return this.http.get<ProyectosItem[]>("http://localhost:5239/api/proyecto");
   }
 
   registrar(proyecto: Proyecto):Observable<Proyecto>{
-    return of(proyecto)
+    //return of(proyecto)
+    return this.http.post<Proyecto>("http://localhost:5239/api/proyecto", proyecto)
+  }
+
+  actualizar(proyecto: Proyecto):Observable<boolean>{
+    return this.http.put<boolean>("http://localhost:5239/api/proyecto", proyecto)
+  }
+
+  buscarPorId(id_proyecto: number):Observable<Proyecto>{
+    return this.http.get<Proyecto>("http://localhost:5239/api/proyecto/"+id_proyecto)
+  }
+
+  eliminar(id_proyecto: number):Observable<boolean>{
+    console.log("http://localhost:5239/api/proyecto/"+id_proyecto)
+    return this.http.delete<boolean>("http://localhost:5239/api/proyecto/"+id_proyecto);
   }
 }

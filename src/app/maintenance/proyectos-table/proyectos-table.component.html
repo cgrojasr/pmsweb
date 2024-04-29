@@ -16,16 +16,16 @@
             <td>{{item.pm_asignado}}</td>
             <td>{{item.estado}}</td>
             <td>
-                <button class="btn">
+                <button class="btn" (click)="btnEditar_Click(item.id_proyecto)">
                     <img src="./../../../assets/4226577.png" style="height: 30px; width: 30px;">
                 </button>
             </td>
             <td>
-                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#proyectoDeleteModal" (click)="btnEliminar_Click(item.id_proyecto)">
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#proyectoDeleteModal" (click)="btnEliminarPopUp_Click(item.id_proyecto)">
                     <img src="./../../../assets/3096750.png" style="height: 30px; width: 30px;">
                 </button>
             </td>
         </tr>
     </tbody>
 </table>
-<app-proyecto-eliminar [id_proyecto]="id_proyecto_selected"></app-proyecto-eliminar>
+<app-proyecto-eliminar [id_proyecto]="id_proyecto_selected" (eventEliminarProyecto)="eliminar_proyecto($event)"></app-proyecto-eliminar>

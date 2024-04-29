@@ -18,8 +18,6 @@ export class ProyectosTableComponent implements OnInit {
   ) {
   }
 
-  @Input() saldo: number = 0
-
   ngOnInit(): void {
     this.proyectosService.listar().subscribe(result => {
       this.proyectos = result
@@ -31,7 +29,16 @@ export class ProyectosTableComponent implements OnInit {
     this.router.navigateByUrl('maintenance/proyecto-item/'+id_proyecto)
   }
 
-  btnEliminar_Click(id_proyecto: number): void {
+  btnEliminarPopUp_Click(id_proyecto: number): void {
     this.id_proyecto_selected = id_proyecto
+  }
+
+  eliminar_proyecto(result: boolean){
+    if(result)
+      this.proyectosService.listar().subscribe(
+        result=>{
+          this.proyectos = result
+        }
+    )
   }
 }

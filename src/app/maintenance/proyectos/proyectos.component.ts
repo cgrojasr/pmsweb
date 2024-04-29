@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,9 +7,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent {
-  /**
-   *
-   */
   constructor(
     private router: Router
   ) {
