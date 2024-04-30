@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { GestorItem } from 'src/app/models/gestor-model';
+import { combo_box } from 'src/app/models/base-model';
 import { Proyecto } from 'src/app/models/proyectos-model';
-import { GestorService } from 'src/app/services/gestor/gestor.service';
+import { ColaboradorService } from 'src/app/services/colaborador/colaborador.service';
 import { ProyectosService } from 'src/app/services/proyectos/proyectos.service';
 
 @Component({
@@ -26,10 +26,11 @@ export class ProyectosItemComponent implements OnInit {
     id_estado: 0
   }
 
-  gestores: GestorItem[] = []
-  
+  colaboradores_pm: combo_box[] = []
+  colaboradores_po: combo_box[] = []
+
   constructor(
-    private gestorService: GestorService,
+    private colaboradorService: ColaboradorService,
     private proyectoService: ProyectosService,
     private router: Router,
     private activedRoute: ActivatedRoute,
@@ -45,7 +46,7 @@ export class ProyectosItemComponent implements OnInit {
             result => {
               this.proyecto = result
               this.coookie.set("proyecto_cookie", JSON.stringify(result))
-              this.proyecto = JSON.parse(this.coookie.get("proyecto_cookie")) 
+              this.proyecto = JSON.parse(this.coookie.get("proyecto_cookie"))
               console.log(this.proyecto)
               console.log(this.coookie.get("proyecto_cookie"))
             }
@@ -53,12 +54,12 @@ export class ProyectosItemComponent implements OnInit {
         }
       }
     )
-    this.gestorService.listartodo().subscribe(
+
+    this.colaboradorService.PM_Combobox().subscribe(
       result => {
-        this.gestores = result
+        this.colaboradores_pm = result
       }
     )
-    
   }
 
   btnRegistra_Click():void{

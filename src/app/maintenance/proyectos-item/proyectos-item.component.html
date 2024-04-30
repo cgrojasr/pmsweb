@@ -15,8 +15,8 @@
         <div class="col-md-4">
             <div class="form-floating mb-3">
                 <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="id_pm_asignado" [(ngModel)]="proyecto.id_pm_asignado">
-                    <option *ngFor="let gestor of gestores" [ngValue]="gestor.id_gestor">
-                        {{gestor.nombre}}
+                    <option *ngFor="let pm of colaboradores_pm" [ngValue]="pm.value">
+                        {{pm.text}}
                     </option>
                 </select>
                 <label for="floatingSelect">Project Manager</label>
@@ -35,7 +35,7 @@
                 <label for="floatingSelect">Estado</label>
               </div>
         </div>
-        
+
     </div>
     <div class="row">
         <div class="col-md-4">
