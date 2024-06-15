@@ -4,7 +4,7 @@ import { Router, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ManagementComponent } from './management.component';
 import { MaestroComponent } from './maestro/maestro.component';
-import { ReleasesComponent } from './releases/releases.component';
+import { ReleaseComponent } from './release/release.component';
 
 const routes: Routes = [
   {
@@ -25,8 +25,8 @@ const routes: Routes = [
         component: MaestroComponent
       },
       {
-        path: 'releases',
-        component: ReleasesComponent
+        path: 'release',
+        component: ReleaseComponent
       }
     ]
   }

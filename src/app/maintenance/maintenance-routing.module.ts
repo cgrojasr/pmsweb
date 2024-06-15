@@ -5,6 +5,7 @@ import { MaintenanceComponent } from './maintenance.component';
 import { ProyectosComponent } from './proyectos/proyectos.component';
 import { ReleasesComponent } from './releases/releases.component';
 import { ProyectosItemComponent } from './proyectos-item/proyectos-item.component';
+import { ReleasesItemComponent } from './releases-item/releases-item.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
       {
         path: 'release/:id_proyecto',
         component: ReleasesComponent
+      },
+      {
+        path: 'release-item',
+        component: ReleasesItemComponent
       }
     ]
   }

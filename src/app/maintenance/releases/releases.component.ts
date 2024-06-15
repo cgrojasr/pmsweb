@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-releases',
@@ -13,7 +13,8 @@ export class ReleasesComponent implements OnInit {
    *
    */
   constructor(
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
   }
 
@@ -23,5 +24,9 @@ export class ReleasesComponent implements OnInit {
         this.id_proyecto = params["id_proyecto"]
       }
     )
+  }
+
+  btnRegistrar_Click(): void {
+    this.router.navigateByUrl('maintenance/release-item')
   }
 }

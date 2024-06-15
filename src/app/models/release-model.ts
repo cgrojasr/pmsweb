@@ -13,3 +13,9 @@ export interface release_table {
     fecha_inicio: Date,
     fecha_fin: Date
 }
+
+export interface ReleaseItem {
+    nombre: string,
+    fecha_inicio: Date,
+    fecha_fin: Date
+}

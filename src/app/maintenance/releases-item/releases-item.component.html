@@ -1,1 +1,35 @@
-<p>releases-item works!</p>
+<form #form="ngForm">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Registrar release</h2>
+        </div>    
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="nombre" name="nomnbre" [(ngModel)]="release_item.nombre">
+                <label for="floatingInput">Nombre del release</label>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="floatingInput" placeholder="fecha_inicio" name="fecha_inicio" [(ngModel)]="release_item.fecha_inicio">
+                <label for="floatingInput">Fecha de inicio</label>
+              </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="floatingInput" placeholder="fecha_fin" name="fecha_fin" [(ngModel)]="release_item.fecha_fin">
+                <label for="floatingInput">Fecha de finalización</label>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <button class="btn btn-primary" type="button">Guardar</button>
+        </div>
+    </div>   
+    {{release_item | json}}
+</form>
