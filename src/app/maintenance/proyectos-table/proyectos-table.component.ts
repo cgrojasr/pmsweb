@@ -41,4 +41,8 @@ export class ProyectosTableComponent implements OnInit {
         }
     )
   }
+
+  btnRelease_Click(id_proyecto: number):void{
+    this.router.navigateByUrl('maintenance/release/'+id_proyecto)
+  }
 }

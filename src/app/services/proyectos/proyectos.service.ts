@@ -34,8 +34,8 @@ export class ProyectosService {
   ]
 
   listar():Observable<ProyectosItem[]>{
-    //return of(this.proyectos)
-    return this.http.get<ProyectosItem[]>("http://localhost:5239/api/proyecto");
+    return of(this.proyectos)
+    //return this.http.get<ProyectosItem[]>("http://localhost:5239/api/proyecto");
   }
 
   registrar(proyecto: Proyecto):Observable<Proyecto>{

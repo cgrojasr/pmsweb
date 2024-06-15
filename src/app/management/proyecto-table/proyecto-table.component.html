@@ -1,0 +1,22 @@
+<table class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Releases</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        <tr *ngFor="let item of proyectos">
+            <td scope="row">{{item.id_proyecto}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.estado}}</td>
+            <td>
+                <button class="btn" (click)="btnRelease_Click(item.id_proyecto)">
+                    <img src="./../../../assets/4295892.png" style="height: 30px; width: 30px;">
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

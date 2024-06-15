@@ -5,6 +5,7 @@
             <th scope="col">Nombre</th>
             <th scope="col">Project Manager</th>
             <th scope="col">Estado</th>
+            <th scope="col">Releases</th>
             <th scope="col">Editar</th>
             <th scope="col">Eliminar</th>
         </tr>
@@ -15,6 +16,11 @@
             <td>{{item.nombre}}</td>
             <td>{{item.pm_asignado}}</td>
             <td>{{item.estado}}</td>
+            <td>
+                <button class="btn" (click)="btnRelease_Click(item.id_proyecto)">
+                    <img src="./../../../assets/4295892.png" style="height: 30px; width: 30px;">
+                </button>
+            </td>
             <td>
                 <button class="btn" (click)="btnEditar_Click(item.id_proyecto)">
                     <img src="./../../../assets/4226577.png" style="height: 30px; width: 30px;">

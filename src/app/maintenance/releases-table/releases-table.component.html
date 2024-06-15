@@ -1,1 +1,18 @@
-<p>releases-table works!</p>
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Fecha Inicio</th>
+        <th scope="col">Fecha Fin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let release of releases">
+        <td>{{release.id_release}}</td>
+        <td>{{release.nombre}}</td>
+        <td>{{release.fecha_inicio | date:'yyyy-MM-dd'}}</td>
+        <td>{{release.fecha_fin| date:'yyyy-MM-dd'}}</td>
+      </tr>
+    </tbody>
+  </table>
