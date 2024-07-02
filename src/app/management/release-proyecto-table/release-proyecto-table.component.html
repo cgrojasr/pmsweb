@@ -1,0 +1,23 @@
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">Nombre del proyecto</th>
+        <th scope="col">Chapter</th>
+        <th scope="col">Etapa</th>  
+        <th scope="col">Estado</th>
+        <th scope="col">Releases</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let proyecto of proyectos">
+        <td hidden="true">{{proyecto.id_proyecto}}</td>
+        <th scope="row">{{proyecto.codigo}}</th>
+        <td>{{proyecto.nombre}}</td>
+        <td>{{proyecto.chapter_programa}}</td>
+        <td>{{proyecto.etapa}}</td>
+        <td>{{proyecto.estado}}</td>
+        <td>Boton</td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Proyecto } from 'src/app/models/proyectos-model';
+import { Proyecto } from 'src/app/models/proyecto-model';
+
 
 @Component({
   selector: 'app-proyecto-table',

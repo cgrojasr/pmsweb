@@ -12,6 +12,7 @@ import { ReleaseItemComponent } from './release-item/release-item.component';
 import { ProyectoTableComponent } from './proyecto-table/proyecto-table.component';
 import { ProyectoItemComponent } from './proyecto-item/proyecto-item.component';
 import { ProyectoEtapaTableComponent } from './proyecto-etapa-table/proyecto-etapa-table.component';
+import { ReleaseProyectoTableComponent } from './release-proyecto-table/release-proyecto-table.component';
 
 
 
@@ -26,7 +27,8 @@ import { ProyectoEtapaTableComponent } from './proyecto-etapa-table/proyecto-eta
     ReleaseItemComponent,
     ProyectoTableComponent,
     ProyectoItemComponent,
-    ProyectoEtapaTableComponent
+    ProyectoEtapaTableComponent,
+    ReleaseProyectoTableComponent
   ],
   imports: [
     CommonModule,

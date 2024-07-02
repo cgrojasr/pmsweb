@@ -1,4 +1,4 @@
-export interface ProyectosItem{
+export interface ProyectoItem{
     id_proyecto:number,
     nombre:string,
     pm_asignado: string
@@ -13,4 +13,13 @@ export interface Proyecto{
     prosupuesto: number,
     fecha_inicio:Date, //no son parte de la trama del API
     id_estado: number  //no son parte de la trama del API
+}
+
+export interface ProyectoPorPM{
+    id_proyecto: number,
+    codigo: string,
+    nombre: string,
+    chapter_programa: string,
+    etapa: string,
+    estado:string
 }

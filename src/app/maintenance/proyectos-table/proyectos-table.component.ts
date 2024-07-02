@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProyectosItem } from 'src/app/models/proyectos-model';
-import { ProyectosService } from 'src/app/services/proyectos/proyectos.service';
+import { ProyectoItem } from 'src/app/models/proyecto-model';
+import { ProyectoService } from 'src/app/services/proyecto/proyecto.service';
 
 @Component({
   selector: 'app-proyectos-table',
@@ -9,11 +9,11 @@ import { ProyectosService } from 'src/app/services/proyectos/proyectos.service';
   styleUrls: ['./proyectos-table.component.css']
 })
 export class ProyectosTableComponent implements OnInit {
-  proyectos: ProyectosItem[] = []
+  proyectos: ProyectoItem[] = []
   id_proyecto_selected: number = 0
 
   constructor(
-    private proyectosService: ProyectosService,
+    private proyectosService: ProyectoService,
     private router: Router
   ) {
   }

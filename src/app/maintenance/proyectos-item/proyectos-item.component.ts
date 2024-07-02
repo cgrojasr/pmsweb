@@ -3,9 +3,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { combo_box } from 'src/app/models/base-model';
-import { Proyecto } from 'src/app/models/proyectos-model';
+import { Proyecto } from 'src/app/models/proyecto-model';
 import { ColaboradorService } from 'src/app/services/colaborador/colaborador.service';
-import { ProyectosService } from 'src/app/services/proyectos/proyectos.service';
+import { ProyectoService } from 'src/app/services/proyecto/proyecto.service';
 
 @Component({
   selector: 'app-proyectos-item',
@@ -31,7 +31,7 @@ export class ProyectosItemComponent implements OnInit {
 
   constructor(
     private colaboradorService: ColaboradorService,
-    private proyectoService: ProyectosService,
+    private proyectoService: ProyectoService,
     private router: Router,
     private activedRoute: ActivatedRoute,
     private coookie: CookieService

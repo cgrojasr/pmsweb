@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ProyectosService } from 'src/app/services/proyectos/proyectos.service';
+import { ProyectoService } from 'src/app/services/proyecto/proyecto.service';
 
 @Component({
   selector: 'app-proyecto-eliminar',
@@ -11,7 +11,7 @@ export class ProyectoEliminarComponent {
   @Input() id_proyecto:number = 0
   @Output() eventEliminarProyecto: EventEmitter<boolean> = new EventEmitter()
   constructor(
-    private proyectoService: ProyectosService
+    private proyectoService: ProyectoService
   ) {
   }
 
