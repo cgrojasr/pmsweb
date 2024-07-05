@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ManagementComponent } from './management.component';
 import { MaestroComponent } from './maestro/maestro.component';
 import { ReleaseComponent } from './release/release.component';
+import { ReleaseProyectoComponent } from './release-proyecto/release-proyecto.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: 'release',
         component: ReleaseComponent
+      },
+      {
+        path: 'release_proyecto/:id_proyecto',
+        component: ReleaseProyectoComponent
       }
     ]
   }

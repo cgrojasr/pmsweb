@@ -1,4 +1,4 @@
-export interface release {
+export interface Release {
     id_release: number,
     id_proyecto: number,
     nombre: string,
@@ -7,15 +7,9 @@ export interface release {
     descripcion: string
 }
 
-export interface release_table {
+export interface ReleaseItem {
     id_release: number,
     nombre: string,
     fecha_inicio: Date,
-    fecha_fin: Date
-}
-
-export interface ReleaseItem {
-    nombre: string,
-    fecha_inicio: Date,
-    fecha_fin: Date
+    fecha_final: Date
 }

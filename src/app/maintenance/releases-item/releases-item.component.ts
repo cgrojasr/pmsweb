@@ -8,8 +8,9 @@ import { ReleaseItem } from 'src/app/models/release-model';
 })
 export class ReleasesItemComponent {
   release_item: ReleaseItem = {
+    id_release: 0,
     nombre: '',
     fecha_inicio: new Date(),
-    fecha_fin: new Date()
+    fecha_final: new Date()
   }
 }

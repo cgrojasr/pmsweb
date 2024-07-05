@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { release_table } from 'src/app/models/release-model';
+import { ReleaseItem } from 'src/app/models/release-model';
 import { ReleasesService } from 'src/app/services/release/releases.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ReleasesService } from 'src/app/services/release/releases.service';
 })
 export class ReleasesTableComponent implements OnInit {
   @Input() id_proyecto: number = 0
-  releases: release_table[]=[]
+  releases: ReleaseItem[]=[]
   /**
    *
    */
@@ -20,7 +20,7 @@ export class ReleasesTableComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.releaseService.listar(this.id_proyecto).subscribe(
+    this.releaseService.listarPorProyecto(this.id_proyecto).subscribe(
       result=>{
         this.releases = result
       }

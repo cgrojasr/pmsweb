@@ -17,7 +17,11 @@
         <td>{{proyecto.chapter_programa}}</td>
         <td>{{proyecto.etapa}}</td>
         <td>{{proyecto.estado}}</td>
-        <td>Boton</td>
+        <td>
+          <button class="btn" (click)="btnRelease_Click(proyecto.id_proyecto)">
+              <img src="./../../../assets/4295892.png" style="height: 30px; width: 30px;">
+          </button>
+        </td>
       </tr>
     </tbody>
   </table>

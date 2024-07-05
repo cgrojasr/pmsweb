@@ -1,1 +1,22 @@
-<p>release-table works!</p>
+<table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Fecha Inicio</th>
+        <th scope="col">Fecha Final</th>
+        <th scope="col">Historial</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let release of releases">
+        <td>{{release.nombre}}</td>
+        <td>{{release.fecha_inicio}}</td>
+        <td>{{release.fecha_final}}</td>
+        <td>
+          <!-- <button class="btn" (click)="btnRelease_Click(proyecto.id_proyecto)">
+              <img src="./../../../assets/4295892.png" style="height: 30px; width: 30px;">
+          </button> -->
+        </td>
+      </tr>
+    </tbody>
+  </table>

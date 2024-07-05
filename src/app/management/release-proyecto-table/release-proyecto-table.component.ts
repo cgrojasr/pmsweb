@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { ColaboradorToken } from 'src/app/models/colaborador-model';
 import { ProyectoPorPM } from 'src/app/models/proyecto-model';
@@ -14,7 +15,8 @@ export class ReleaseProyectoTableComponent implements OnInit {
 
   constructor(
     private proyectoService: ProyectoService,
-    private cookie: CookieService
+    private cookie: CookieService,
+    private router: Router
   ) {    
   }
 
@@ -26,5 +28,9 @@ export class ReleaseProyectoTableComponent implements OnInit {
         this.proyectos = result
       }
     )
+  }
+
+  btnRelease_Click(id_proyecto: number): void {
+    this.router.navigateByUrl(`management/release_proyecto/${id_proyecto}`)
   }
 }
